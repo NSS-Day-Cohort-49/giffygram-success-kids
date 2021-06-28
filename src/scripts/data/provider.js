@@ -1,6 +1,6 @@
-const apiURL = "http://localhost:8088"
+// const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
-
+const apiURL = "http://localhost:8088"
 
 const applicationState = {
     users: [],
@@ -15,52 +15,27 @@ const applicationState = {
     }
 }
 
+//GET HTTP Fetch Requests:
+
 export const fetchUsers = () => {
     return fetch(`${apiURL}/users`)
         .then(response => response.json())
         .then(
             (usersData) => {
-                // Store the external state in application state
                 applicationState.users = usersData
             }
         );
 };
 
-export const getUsers = () => {
-    return applicationState.users.map(user => ({...user}));
+export const fetchPosts = () => {
+    return fetch(`${apiURL}/posts`)
+        .then(response => response.json())
+        .then(
+            (postsData) => {
+                applicationState.posts = postsData
+            }
+        );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export const fetchLikes = () => {
@@ -74,17 +49,7 @@ export const fetchLikes = () => {
         );
 };
 
-
-
-
-
-
-
-
-
-
-
-
+//POST HTTP fetch requests:
 
 export const favoritePost = (starredData) => {
     const fetchOptions = {
@@ -101,6 +66,16 @@ export const favoritePost = (starredData) => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
+
+//Functions getting copy of each property of applicationState
+
+export const getUsers = () => {
+    return applicationState.users.map(user => ({...user}));
+};
+
+export const getPosts = () => {
+    return applicationState.posts.map(post => ({...post}));
+};
 
 export const getLikes = () => {
     return applicationState.likes.map(like => ({...like}))
