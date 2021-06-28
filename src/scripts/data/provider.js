@@ -29,3 +29,79 @@ export const fetchUsers = () => {
 export const getUsers = () => {
     return applicationState.users.map(user => ({...user}));
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const fetchLikes = () => {
+    return fetch(`${apiURL}/likes`)
+        .then(response => response.json())
+        .then(
+            (likesData) => {
+                // Store the external state in application state
+                applicationState.likes = likesData
+            }
+        );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const favoritePost = (starredData) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(starredData)
+    }
+
+    return fetch(`${apiURL}/likes`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const getLikes = () => {
+    return applicationState.likes.map(like => ({...like}))
+}
