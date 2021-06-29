@@ -92,3 +92,19 @@ export const favoritePost = (starredData) => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
+
+export const newPost = (userPostRequest) => {
+    const fetchPostOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userPostRequest)
+    }
+
+    return fetch(`${apiURL}/posts`, fetchPostOptions)
+        .then(response => response.json())
+        .then(() => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+};

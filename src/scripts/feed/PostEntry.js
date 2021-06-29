@@ -1,12 +1,35 @@
+import { newPost, getUsers } from "../data/provider.js"
+
+const applicationElement = document.querySelector(".giffygram")
+
+applicationElement.addEventListener("click", clickEvent => {
+    clickEvent.preventDefault();
+    if (clickEvent.target.id === "newPost__submit") {
+        const postTitle = document.querySelector("input[name='postTitle']").value
+        const postURL = document.querySelector("input[name='postURL']").value
+        const postDescription = document.querySelector("input[name='postDescription']").value
+
+        const dataToSendToAPI = {
+           title: postTitle,
+           url: postURL,
+           description: postDescription,
+           timestamp: Date.now(),
+           userId: parseInt(localStorage.getItem("gg_user"))
+        }
+
+        newPost(dataToSendToAPI)
+    }
+})
+
 export const PostEntry = () => {
-    return `
+    let html = `
     <div class="newPost">
     <div>
         <input value=""
                name="postTitle"
                class="newPost__input"
                type="text"
-               placeholder="Title" />
+               placeholder="Gif title" />
     </div>
     <div>
             <input value=""
@@ -17,11 +40,12 @@ export const PostEntry = () => {
         </div>
         
         <textarea name="postDescription"
-            class="newPost__input newPost__description"
-            placeholder="Story behind your gif..."></textarea>
+            class="newPost__input"
+            placeholder="Add a caption?"></textarea>
 
         <button id="newPost__submit">Save</button>
         <button id="newPost__cancel">Cancel</button>
     </div>
     `
+    return html
 }
