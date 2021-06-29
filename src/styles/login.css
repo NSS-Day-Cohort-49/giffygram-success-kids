@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Indie Flower', cursive; */
+    box-sizing: border-box;
+}
+
+.loginForm {
+    /* The image used */
+    background-image: url("https://i.pinimg.com/originals/8b/7f/bc/8b7fbc2e623720393ad7ffa7e4896eac.gif");
+  
+    /* Set a specific height */
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login_wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 70px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+/* Pseudo element before the content of form */
+.form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    pointer-events: none;
+    cursor: pointer;
+    transform: skewX(-45deg);
+    transform-origin: bottom-left;
+}
+/* Calc() function calculates location of image which specifies center and a little bit above the form */
+.avatar {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    width: 100px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: #5bb1c7;
+    font-size: 50px;
+    cursor: pointer;
+    font-family: 'Indie Flower', cursive;
+}
+
+.form .input_group {
+    position: relative;
+}
+
+.log_input {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    font-family: 'Indie Flower', cursive;
+}
+
+.log_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1.6rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+    font-family: 'Indie Flower', cursive;
+}
+
+/* //When the input is focused */
+
+.log_input:focus + .log_label,
+.log_input:valid + .log_label {
+    transform: translateY(-30px);
+    color: #5bb1c7;
+    font-size: 1.4rem;
+    font-family: 'Indie Flower', cursive;
+}
+
+#loginButton {
+    display: block;
+    margin:auto;
+    border: none;
+    outline: none;
+    background: #5bb1c7;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Indie Flower', cursive;
+}
+
+#loginButton:hover {
+    color: whitesmoke;
+    background-color: rgb(43, 41, 41);
+}
+
+.slogan {
+    color: #5bb1c7;
+    cursor: pointer;
+    font-size: 18.82px;
+    padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.log_div {
+    display: flex;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 7px;
+    margin-bottom: -7px;
+}
