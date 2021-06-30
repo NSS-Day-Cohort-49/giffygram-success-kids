@@ -16,10 +16,11 @@ export const MessagesHistory = () => {
     return `<div>  
         ${messagesSorted.map((message) => {
             const foundUser = users.find(user => user.id === parseInt(message.userId));
-            return `<div>
-            <h4>Topic:${message.topic}</h4>
-            <p>Message: ${message.messageBody}</p>
-            <p>Sent on: ${message.dateSent} by ${foundUser.name}</p>
+            return `<div class="msg_history_div">
+            <div class="msg_hx"><h4 class="msgHistory">Topic:${message.topic}</h4>
+            <p "msgHistory">Message: ${message.messageBody}</p>
+            <p "msgHistory">Sent on: ${message.dateSent}</p>
+            <p "msgHistory">From: ${foundUser.name}</p></div>
             </div>`
         }).join('')}
     </div>`
