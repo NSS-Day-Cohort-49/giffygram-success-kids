@@ -42,7 +42,7 @@ export const fetchFavorites = () => {
     return fetch(`${apiURL}/favorites`)
         .then(response => response.json())
         .then(
-            (likesData) => {
+            (favoritesData) => {
                 applicationState.favorites = favoritesData
             }
         );
@@ -169,4 +169,4 @@ export const deletePost = (id) => {
                 applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
-}
+};

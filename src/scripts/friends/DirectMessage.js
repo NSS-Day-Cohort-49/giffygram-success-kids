@@ -1,6 +1,8 @@
-import { getUserPendingMessages } from "../data/provider.js"
+import { getUserPendingMessages, getUsers } from "../data/provider.js"
 
 export const DirectMessage = () => {
+    const users = getUsers();
+    //find users return user.id matches the message.userId display user.name
     let unreadMessages = getUserPendingMessages()
 
     return `<div>  
