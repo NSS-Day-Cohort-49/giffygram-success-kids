@@ -4,7 +4,6 @@ import { getPosts } from "../data/provider.js"
 
 export const Posts = () => {
     const posts = getPosts();
-    console.log(posts)
 
     let postHTML = `${posts.map(post => {
         return `<section>
@@ -15,12 +14,6 @@ export const Posts = () => {
             <button class="post_remove" id="remove--${post.id}"><img src="https://img.icons8.com/dusk/24/000000/trash.png"/></button>
         </section>`
     }).join("")}`
-
-    // let postHTML = `${posts.map(post => {
-    //     return `<li>
-    //     <input type="hidden" value="${post.id}" name="post"> ${post.title} <img src="${post.url}"/> ${post.description}
-    //     </li>`}).join("")
-    // }`
 
     return postHTML;
 };
