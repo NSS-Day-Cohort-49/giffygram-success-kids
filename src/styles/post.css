@@ -72,3 +72,29 @@
     font-size: 2em;
     margin: 1em 0 0.5em 0;
 }
+
+.post_buttons {
+    display: flex;
+    margin-left: 12em;
+}
+
+.post_img {
+    border-radius: 1em;
+    width: 500px;
+}
+
+.post_title {
+    margin-left: 12em;
+}
+
+.post_description {
+    margin-left: 14em;
+}
+
+.posts {
+    margin-left: 28em;
+}
+
+.posts h2 {
+    margin-left: 9.25em;
+}
