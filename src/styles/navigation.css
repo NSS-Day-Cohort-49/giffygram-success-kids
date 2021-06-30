@@ -1,7 +1,5 @@
 .nav_div {
     padding-bottom: 10em;
-    /* background: #5bb1c7; */
-    /* padding: 8em 0.25em 1em; */
 }
 
 .navigation {
@@ -68,12 +66,21 @@
     border-radius: 20px;
 }
 
+.img_logo:hover {
+    border: 2px solid #5bb1c7;
+}
+
 .img_gif {
-    width: 100px;
-    height: 100px;
+    width: 101px;
+    height: 101px;
     mix-blend-mode: multiply;
-    border-radius: 50px;
-    margin-left: 15em;
+    border-radius: 60px;
+    margin-left: 23em;
+    margin-top: 0.5em;
+}
+
+.img_gif:hover {
+    border: 3px solid #5bb1c7;
 }
 
 .navigation__logout {
@@ -86,7 +93,7 @@
 
 .navigation__logout {
     display: block;
-    margin:auto;
+    margin-top: 0.7em;
     border: none;
     outline: none;
     background: #5bb1c7;
@@ -96,17 +103,69 @@
     padding: 10px 20px;
     border-radius: 70px;
     cursor: pointer;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Courgette', cursive;
 }
 
 .navigation__logout:hover {
     color: whitesmoke;
     background-color: rgb(43, 41, 41);
+    border: 2px solid #5bb1c7;
 }
 
 #directMessageIcon {
     cursor: pointer;
-    margin-left: -5em;
-    margin-top: 0.5em;
+    margin-left: -2em;
+    margin-top: 1em;
     font-size: 40px;
+}
+
+#directMessageIcon:hover {
+    opacity: 0.7;
+    border: 2px solid #5bb1c7;
+    border-radius: 10px;
+}
+
+#msg_history {
+    display: block;
+    /* margin-left: -7em; */
+    border: none;
+    outline: none;
+    background: #5bb1c7;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 70px;
+    cursor: pointer;
+    font-family: 'Courgette', cursive;
+}
+
+#msg_history:hover {
+    color: whitesmoke;
+    background-color: rgb(43, 41, 41);
+    border: 2px solid #5bb1c7;
+}
+
+.msgHistory {
+    /* margin-left: -4em; */
+    padding-left: -2em;
+    padding-right: 2.5em;
+    padding-top: 1.7em;
+}
+
+#messageCounter {
+    font-family: 'Courgette', cursive;
+    margin-top: 0.7em;
+    margin-left: 5em;
+    font-size: 21px;
+}
+
+#messageCounter:hover {
+    color: whitesmoke;
+    background-color: rgb(43, 41, 41);
+    border: 2px solid #5bb1c7;
+}
+
+.imgGif {
+    margin-left: -5em;
 }

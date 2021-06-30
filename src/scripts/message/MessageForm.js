@@ -35,7 +35,7 @@ export const MessageForm = (state) => {
             </div>
             <h2 class="msg_form_header">Direct Message</h2>
             <div>
-                <label for="msg_topic">Topic:</label>
+                <label class="msg_label" for="msg_topic">Topic:</label>
             </div>
             <div>
                 <input id="msg_topic_input" class="msg_top_input" type="text" placeholder="Enter Topic" />
@@ -52,10 +52,10 @@ export const MessageForm = (state) => {
                 </select>
             </div>
             <div class="msg_content">
-                <label class="label" for="messageBody">Message:</label>
-                <textarea name="msgContent" id="message_body" columns="10" rows="8" placeholder="Message Content"></textarea>
+                <label class="msg_label" for="messageBody">Message:</label>
+                <textarea name="msgContent" id="message_body" columns="30" rows="8" placeholder="Message Content"></textarea>
             </div>
-            <div>
+            <div class="msgForm_button">
                 <button id="sendButton">Send</button>
                 <button id="cancelButton">Cancel</button>
             </div>

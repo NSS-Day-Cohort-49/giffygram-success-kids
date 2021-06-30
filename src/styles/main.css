@@ -5,6 +5,9 @@
 @import 'updates.css';
 @import 'message.css';
 @import 'login.css';
+@import 'directMessage.css';
+@import 'messageHistory.css';
+@import 'messageForm.css';
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 /*Typography
 --------------------------------------------------------------*/
@@ -57,3 +60,4 @@ h1, h2, h3, h4, h5, h6 {
 .giffygram {
     width: 0px;
 }
+

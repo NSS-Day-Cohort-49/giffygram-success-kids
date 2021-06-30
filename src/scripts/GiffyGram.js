@@ -26,7 +26,7 @@ applicationElement.addEventListener("messageFormStateChanged", (customEvent) => 
         navState.messageHistoryPage = false;
         applicationElement.innerHTML = `
         <div class="nav_div">${NavBar()}</div>
-        <div >${MessageForm()}</div>`
+        <div class="msg_form_div">${MessageForm()}</div>`
     } else {
         navState.directMessagePage = false;
         navState.messageHistoryPage = false;
@@ -79,7 +79,7 @@ applicationElement.addEventListener("messageHistoryClicked", (customEvent) => {
         navState.messageFormPage = false;
         applicationElement.innerHTML = `
         <div class="nav_div">${NavBar()}</div>
-        <div >${MessagesHistory()}</div>`
+        <div>${MessagesHistory()}</div>`
     } else {
         navState.directMessagePage = false;
         navState.messageFormPage = false;

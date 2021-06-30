@@ -1,0 +1,86 @@
+*{
+    font-family: Courgette, cursive;
+}
+
+.message_form {
+    margin-left: 40em;
+    text-align: center;  
+}
+
+/* .message_form:hover {
+    border: 2px solid skyblue;
+} */
+
+.close {
+    margin-left: 10em;
+    border-radius: 20px;
+    color: black;
+    background-color: #5bb1c7;
+}
+
+.close:hover {
+    border: 2px solid slateblue;
+    color: white;
+    background-color: black;
+}
+
+.msgForm_button {
+    display: flex;
+    margin-left: 1.5em;
+}
+
+#sendButton {
+    margin-right: 15px;
+    color: black;
+    background-color: #5bb1c7;;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#sendButton:hover {
+    border: 2px solid slateblue;
+    color: white;
+    background-color: black;
+}
+
+#cancelButton {
+    color: black;
+    background-color: #5bb1c7;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#cancelButton:hover {
+    border: 2px solid slateblue;
+    color: white;
+    background-color: black;
+}
+
+.msg_form_header {
+    margin-left: 0.5em;
+    padding: 15px;
+    font-size: 30px;
+}
+
+.msg_label {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+#msg_recipient {
+    font-size: 20px;
+}
+
+.msg_top_input {
+    font-size: 18px;
+}
+
+.message_body {
+    font-size: 20px;
+}
+
+textarea {
+    border: solid 2px #5bb1c7;
+}

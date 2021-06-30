@@ -4,19 +4,26 @@ import { getUserPendingMessages, getUsers } from "../data/provider.js";
 
 export const DirectMessage = () => {
     const users = getUsers();
-    //find users return user.id matches the message.userId display user.name
-    let unreadMessages = getUserPendingMessages()
+    let unreadMessages = getUserPendingMessages();
+    
+    // let messagesSorted = unreadMessages.sort((a,b) => {
+    //     return parseInt(b.dateSent.split("-").join("")) - parseInt(a.dateSent.split("-").join(""));
+    // });
+
+    let messagesSorted = unreadMessages.sort((a,b) => {
+        return b.dateSent - a.dateSent
+    });
 
     return `<div>  
-        ${unreadMessages.map((message) => {
+        ${messagesSorted.map((message) => {
             const foundUser = users.find(user => user.id === parseInt(message.userId));
-            return `<div>
-            <h4>Topic:${message.topic}</h4>
-            <p>Message: ${message.messageBody}</p>
-            <p>Sent on: ${message.dateSent} by ${foundUser.name}</p>
+            return `<div class="dm_div">
+                <p class="dm_topic">Topic: ${message.topic}</p>
+                <p class="dm_msg">Message: ${message.messageBody}</p>
+                <p class="dm_dateSent">Sent on: ${message.dateSent}</p>
+                <p>From: ${foundUser.name}</p>
             </div>`
         }).join('')}
     </div>`
 };
 
-//sort method to sort messages by date sent then add styling
