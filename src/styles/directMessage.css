@@ -13,4 +13,5 @@
 .dm_div:hover {
     border: 3.5px solid black;
     background-color: #81bee7;
+    color: rgb(107, 99, 99);
 }

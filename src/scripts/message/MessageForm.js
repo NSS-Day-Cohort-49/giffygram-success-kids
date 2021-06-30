@@ -30,29 +30,34 @@ export const MessageForm = (state) => {
 
         return `
         <div class="message_form">
-            <div>
+            <div class="header_div">
+                <h2 class="msg_form_header">Direct Message</h2>
                 <button id="exitButton" class="close">&#x2718;</button>
             </div>
-            <h2 class="msg_form_header">Direct Message</h2>
-            <div>
-                <label class="msg_label" for="msg_topic">Topic:</label>
+            
+            <div class="topic_div">
+                <div>
+                    <label class="msg_label" for="msg_topic">Topic:</label>
+                </div>
+                <div>
+                    <input id="msg_topic_input" class="msg_top_input" type="text" placeholder="Enter Topic" />
+                </div>
             </div>
-            <div>
-                <input id="msg_topic_input" class="msg_top_input" type="text" placeholder="Enter Topic" />
-            </div>
-            <div>
-                <label class="msg_label" for="msg_recipient">Recipient:</label>
-            </div>
-            <div>
-                <select id="msg_recipient" class="selectRecipient" name="msg_recipient">
-                    <option value="">Choose a recipient...</option>
-                    ${users.map(user => {
-                        return `<option class="recipient" value="${user.id}">${user.name}</option>`}).join("")
-                    }
-                </select>
+            <div class="recipient_div">
+                <div>
+                    <label class="msg_label" for="msg_recipient">Recipient:</label>
+                </div>
+                <div>
+                    <select id="msg_recipient" class="selectRecipient" name="msg_recipient">
+                        <option value="">Choose a recipient...</option>
+                        ${users.map(user => {
+                            return `<option class="recipient" value="${user.id}">${user.name}</option>`}).join("")
+                        }
+                    </select>
+                </div>
             </div>
             <div class="msg_content">
-                <label class="msg_label" for="messageBody">Message:</label>
+                <label class="msg_label contentLabel" for="messageBody">Message:</label>
                 <textarea name="msgContent" id="message_body" columns="30" rows="8" placeholder="Message Content"></textarea>
             </div>
             <div class="msgForm_button">
