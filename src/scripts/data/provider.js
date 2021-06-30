@@ -5,7 +5,7 @@ const applicationElement = document.querySelector(".giffygram")
 const applicationState = {
     users: [],
     posts: [],
-    likes: [],
+    favorites: [],
     messages: [],
     currentUser: {},
     feed: {
@@ -37,12 +37,12 @@ export const fetchPosts = () => {
         );
 };
 
-export const fetchLikes = () => {
-    return fetch(`${apiURL}/likes`)
+export const fetchFavorites = () => {
+    return fetch(`${apiURL}/favorites`)
         .then(response => response.json())
         .then(
             (likesData) => {
-                applicationState.likes = likesData
+                applicationState.favorites = favoritesData
             }
         );
 };
@@ -67,8 +67,8 @@ export const getPosts = () => {
     return applicationState.posts.map(post => ({...post}));
 };
 
-export const getLikes = () => {
-    return applicationState.likes.map(like => ({...like}))
+export const getFavorites = () => {
+    return applicationState.favorites.map(favorite => ({...favorite}))
 };
 
 export const getMessages = () => {
@@ -86,9 +86,19 @@ export const favoritePost = (starredData) => {
         body: JSON.stringify(starredData)
     }
 
-    return fetch(`${apiURL}/likes`, fetchOptions)
+    return fetch(`${apiURL}/favorite`, fetchOptions)
         .then(response => response.json())
         .then(() => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
+
+export const deletePost = (id) => {
+
+    return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
