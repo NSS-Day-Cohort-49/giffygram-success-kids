@@ -68,6 +68,7 @@ export const fetchPendingMessages = () => {
     );
 };
 
+
 //Functions getting copy of properties in applicationState:
 
 export const getUsers = () => {
@@ -92,6 +93,15 @@ export const getUserPendingMessages = () => {
     return applicationState.pendingMessages.filter(pendingMessage => {
         if (userId === pendingMessage.userId) {
             return pendingMessage;
+        }
+    });
+};
+
+export const getUserMessagesHistory = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.messages.filter(messageHistory => {
+        if (userId === messageHistory.userId) {
+            return messageHistory;
         }
     });
 };

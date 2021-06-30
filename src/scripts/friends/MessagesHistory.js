@@ -1,10 +1,10 @@
-import { getUserPendingMessages } from "../data/provider.js"
+import { getUserMessagesHistory } from "../data/provider.js";
 
-export const DirectMessage = () => {
-    let unreadMessages = getUserPendingMessages()
+export const MessagesHistory = () => {
+    let userMessageHistory = getUserMessagesHistory();
 
     return `<div>  
-        ${unreadMessages.map((message) => {
+        ${userMessageHistory.map((message) => {
             return `<div>
             <h4>Topic:${message.topic}</h4>
             <p>Message: ${message.messageBody}</p>

@@ -9,7 +9,7 @@ applicationElement.addEventListener("click", event => {
         const topic = document.querySelector("#msg_topic_input").value
         
         const dataToSendToAPI = {
-            userId: parseInt(localStorage.getItem("gg_user")),
+            userId: parseInt(localStorage.getItem("gg_user")), //need to display name of sender/user
             recipientId: parseInt(recipientId),
             topic: topic,
             messageBody: messageBody,

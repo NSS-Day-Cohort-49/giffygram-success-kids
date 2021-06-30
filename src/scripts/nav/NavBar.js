@@ -12,6 +12,8 @@ applicationElement.addEventListener("click", clickEvent => {
         applicationElement.dispatchEvent(new CustomEvent("counterButtonClicked"));
     } else if (clickEvent.target.id === "logo") {
         applicationElement.dispatchEvent(new CustomEvent("logoClicked"));
+    } else if (clickEvent.target.id === "msg_history") {
+        applicationElement.dispatchEvent(new CustomEvent("messageHistoryClicked"));
     } else if (clickEvent.target.id === "logout") {
         localStorage.removeItem("gg_user");
         document.querySelector(".giffygram");
@@ -43,6 +45,9 @@ export const NavBar = () => {
             <div class="navigation__item navigation__message">
                 <img id="directMessageIcon" src="https://img.icons8.com/dusk/48/000000/ball-point-pen.png" alt="DM" />
                 <div id="messageCounter" class="notification__count">${countUserPendingMessages()}</div>
+            </div>
+            <div>
+                <button id="msg_history">Message History</button>
             </div>
             <div class="logout_button">
                 <button class="navigation__logout" id="logout">Logout</button>
