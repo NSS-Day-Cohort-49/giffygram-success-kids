@@ -7,7 +7,7 @@ applicationElement.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "newPost__submit") {
         const postTitle = document.querySelector("input[name='postTitle']").value
         const postURL = document.querySelector("input[name='postURL']").value
-        const postDescription = document.querySelector("input[name='postDescription']").value
+        const postDescription = document.querySelector("textarea[name='postDescription']").value
 
         const dataToSendToAPI = {
            title: postTitle,
@@ -21,9 +21,26 @@ applicationElement.addEventListener("click", clickEvent => {
     }
 })
 
+applicationElement.addEventListener("click", clickEvent => {
+    clickEvent.preventDefault();
+    if (clickEvent.target.id === "newPost__cancel") {
+        applicationElement.dispatchEvent(new CustomEvent ("stateChanged"))
+    }
+})
+
+applicationElement.addEventListener("click", clickEvent => {
+    clickEvent.preventDefault();
+    if (clickEvent.target.id === "showPost__form") {
+        clickEvent.target.id = "display";
+    } else {
+        clickEvent.target.id = "none";
+    }
+})
+
 export const PostEntry = () => {
     let html = `
     <div class="newPost">
+    <h3>Post a Gif?</h3>
     <div>
         <input value=""
                name="postTitle"
