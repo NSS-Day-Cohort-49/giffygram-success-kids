@@ -28,7 +28,7 @@ export const LoginForm = () => {
     return `
     <div class="login_wrapper loginForm">
         <form action="" class="form">
-            <img class="avatar" src="https://i.imgur.com/dGo8DOk.jpg"/>
+            <img class="avatar" src="../images/avatar.png"/>
             <h1 class="title">Giffygram</h1>
             <div class="input_group">
                 <input class="log_input" type="text" name="email" autofocus id="loginUser" required>

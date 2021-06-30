@@ -18,3 +18,5 @@ export const DirectMessage = () => {
         }).join('')}
     </div>`
 };
+
+//sort method to sort messages by date sent then add styling
