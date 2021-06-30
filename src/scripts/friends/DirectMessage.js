@@ -1,4 +1,6 @@
-import { getUserPendingMessages, getUsers } from "../data/provider.js"
+import { getUserPendingMessages, getUsers } from "../data/provider.js";
+
+
 
 export const DirectMessage = () => {
     const users = getUsers();
@@ -7,10 +9,11 @@ export const DirectMessage = () => {
 
     return `<div>  
         ${unreadMessages.map((message) => {
+            const foundUser = users.find(user => user.id === parseInt(message.userId));
             return `<div>
             <h4>Topic:${message.topic}</h4>
             <p>Message: ${message.messageBody}</p>
-            <p>Sent on: ${message.dateSent} by ${message.userId}</p>
+            <p>Sent on: ${message.dateSent} by ${foundUser.name}</p>
             </div>`
         }).join('')}
     </div>`
