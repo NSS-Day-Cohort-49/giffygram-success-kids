@@ -5,9 +5,9 @@ const applicationElement = document.querySelector(".giffygram")
 applicationElement.addEventListener("click", clickEvent => {
     clickEvent.preventDefault();
     if (clickEvent.target.id === "newPost__submit") {
-        const postTitle = document.querySelector("title").value
-        const postURL = document.querySelector("url").value
-        const postDescription = document.querySelector("description").value
+        const postTitle = document.querySelector("input[name='postTitle']").value
+        const postURL = document.querySelector("input[name='postURL']").value
+        const postDescription = document.querySelector("input[name='postDescription']").value
 
         const dataToSendToAPI = {
            title: postTitle,
@@ -26,20 +26,20 @@ export const PostEntry = () => {
     <div class="newPost">
     <div>
         <input value=""
-               name="title"
+               name="postTitle"
                class="newPost__input"
                type="text"
                placeholder="Gif title" />
     </div>
     <div>
             <input value=""
-                   name="url"
+                   name="postURL"
                    class="newPost__input"
                    type="text"
                    placeholder="URL of gif" />
         </div>
         
-        <textarea name="description"
+        <textarea name="postDescription"
             class="newPost__input"
             placeholder="Add a caption?"></textarea>
 
