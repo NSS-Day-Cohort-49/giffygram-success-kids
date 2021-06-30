@@ -6,7 +6,9 @@ export const GiffyGram = () => {
 
     // Show main main UI
     return `
-    <div class="nav_bar">${NavBar()}</div>
+    <section class="nav_div">
+        ${NavBar()}
+    </section>
     ${PostEntry()}
     
     <section class="posts">
