@@ -10,6 +10,7 @@ import { SentMessagesPage } from "./friends/sentMessagesPage.js";
 import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
 
 
+
 //Sets initial state for messageForm and directMessage as false:
 let navState = {
     messageFormPage: false,
@@ -18,6 +19,7 @@ let navState = {
     sentMessagesPage: false,
     receivedMessagesPage: false
 };
+
 
 //Custom event listeners coming from Navbar and MessageForm modules being dispatched/broadcasted as a change in state which changes navState and
 //does conditional rendering:
@@ -140,11 +142,12 @@ export const GiffyGram = () => {
     <div class="nav_div">
         ${NavBar()}
     </div>
+    <section>
         ${PostEntry()}
-    
+    </section>
     <section class="posts">
         <h2>Posts</h2>
         ${Posts()}
     </section>
     `
-}
+};

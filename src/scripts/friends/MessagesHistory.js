@@ -31,10 +31,10 @@ export const MessagesHistory = () => {
 
 
                 return `<div> 
-                <div class="msg_btns">
-                    <div><button id="sentMsgBtn">Sent</button></div>
-                    <div><button id="receivedMsgBtn">Received</button></div>
-                    <div><button id="allMsgBtn">All</button></div>
+                <div>
+                    <button id="sentMsgBtn">Sent</button>
+                    <button id="receivedMsgBtn">Received</button>
+                    <button id="allMsgBtn">All</button>
                 </div>
                 <div id="messageHistoryDiv">
                     ${userMessageHistory.map((message) => {

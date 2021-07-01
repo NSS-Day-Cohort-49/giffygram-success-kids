@@ -160,6 +160,7 @@ export const newPost = (userPostRequest) => {
     return fetch(`${apiURL}/posts`, fetchPostOptions)
         .then(response => response.json())
         .then(() => {
+            alert("Your Post Has Been Sent! :D");
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
@@ -203,6 +204,7 @@ export const deletePendingMessage = (messageId) => {
     return fetch(`${apiURL}/pendingMessages/${messageId}`, fetchOptions)
     .then(response => response.json());
 }
+
 export const deletePost = (id) => {
     return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
