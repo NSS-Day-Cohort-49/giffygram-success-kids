@@ -8,6 +8,8 @@ import { renderApp } from "./main.js";
 import { MessagesHistory } from "./friends/MessagesHistory.js";
 import { SentMessagesPage } from "./friends/sentMessagesPage.js";
 import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
+import { Footer } from "./nav/Footer.js"
+import { Profile } from "./feed/Profile.js"
 
 
 
@@ -20,11 +22,28 @@ let navState = {
     receivedMessagesPage: false
 };
 
+let footerState = {
+    postsbyuser_posts: false,
+    postsbydate_posts: false
+};
+
 
 //Custom event listeners coming from Navbar and MessageForm modules being dispatched/broadcasted as a change in state which changes navState and
 //does conditional rendering:
-
 const applicationElement = document.querySelector(".giffygram");
+applicationElement.addEventListener("footerUsersClickStateChanged", (customEvent) => {
+    console.log(footerState, customEvent.detail.userId)
+    footerState.postsbyuser_posts = !footerState.postsbyuser_posts;
+    if (footerState.postsbyuser_posts) {
+        footerState.postsbydate_posts = false;
+        applicationElement.innerHTML = `
+        <div class="footer_div">${Footer()}</div>
+        <div class="profile_div">${Profile(parseInt(customEvent.detail.userId))}</div>`
+    } else {
+        applicationElement.innerHTML = GiffyGram();
+    }
+});
+
 applicationElement.addEventListener("messageFormStateChanged", (customEvent) => {
     console.log(navState)
     navState.messageFormPage = !navState.messageFormPage;
@@ -149,5 +168,9 @@ export const GiffyGram = () => {
         <h2>Posts</h2>
         ${Posts()}
     </section>
+    <div class="footer_div">
+        ${Footer()}
+    </div>
+    
     `
 };

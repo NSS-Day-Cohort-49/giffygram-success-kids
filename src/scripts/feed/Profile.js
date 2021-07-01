@@ -3,7 +3,6 @@ import { getUsers, getPosts } from "../data/provider.js";
 
 
 export const Profile = (userProfileId) => {
-
     const users = getUsers();
     const posts = getPosts();
 
@@ -13,14 +12,13 @@ export const Profile = (userProfileId) => {
     let sortedPosts = posts.sort((a,b) => {
         return b.dateSent - a.dateSent
     });
+    const filteredPosts =sortedPosts.filter(userPost => {
+        return userPost.userId === userProfileId
+    });
 
-    let userProfileHTML = `${users.map(user => {
-        if (userProfileId === user.id) {
-            const filteredPosts =sortedPosts.filter(userPost => {
-                return userPost.userId === user.id
-            });
-            filteredPosts.map(post => {
-                userProfileHTML += `
+    let userProfileHTML = filteredPosts.map(post => {  
+        return `
+               
                 <div class="user_profile">
                     <h1>${post.title}</h1>
                     <img class="posted_gif" src="${post.url}" alt="Posted Gif" /> 
@@ -28,11 +26,7 @@ export const Profile = (userProfileId) => {
                     <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
                 </div>
                 `
-            })
-        }
-    }).join("")
-    }
-    `
+            }).join("")
+    
     return userProfileHTML;
 };
-
