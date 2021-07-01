@@ -1,0 +1,134 @@
+*{
+    font-family: Courgette, cursive;
+}
+
+.message_form {
+    margin-left: 40em;
+    text-align: center;
+    border: 3px solid #a6a7a8;
+    border-top-right-radius: 170px;
+    border-bottom-left-radius: 170px;
+    background-color: #a8d2dd;
+    width: 40vw;
+    padding: 2em;
+    margin: 1em 1em 2em 28em;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgb(61, 60, 60);
+}
+
+.message_form:hover {
+    border: 3.5px solid black;
+    background-color: #81bee7;
+    color: rgb(107, 99, 99);
+}
+
+.header_div {
+    display: flex;
+}
+
+.msg_form_header {
+    margin-left: 4.5em;
+    padding-right: 3em;
+    padding-bottom: 1em;
+    font-size: 30px;
+}
+
+.close {
+    margin: 25px;
+    border-radius: 15px;
+    color: black;
+    background-color: #5bb1c7;
+    font-size: 20px;
+
+  
+}
+
+.close:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+.topic_div {
+    display: flex;
+    padding-bottom: 1em;
+}
+
+.recipient_div {
+    display: flex;
+    padding-bottom: 1em;
+}
+
+.msg_content {
+    display: flex;
+    padding-bottom: 1em;
+}
+
+.contentLabel {
+    margin-top: -0.7em;
+}
+
+.msgForm_button {
+    display: flex;
+    margin-left: 9em;
+    margin-top: 0.5em;
+}
+
+#sendButton {
+    margin-right: 15px;
+    color: black;
+    background-color: #5bb1c7;;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 5px;
+    width: 30%;
+}
+
+#sendButton:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+#cancelButton {
+    color: black;
+    background-color: #5bb1c7;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 5px;
+    width: 30%;
+}
+
+#cancelButton:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+.msg_label {
+    font-size: 20px;
+    padding: 10px 10px;
+    margin-left: 4.5em;  
+}
+
+.msg_top_input {
+    width: 100%;
+    margin-left: 2em;
+}
+
+#msg_recipient {
+    font-size: 20px;
+}
+
+.msg_top_input {
+    font-size: 18px;
+}
+
+.message_body {
+    font-size: 20px;
+}
+
+textarea {
+    border: solid 2px rgb(94, 92, 92);
+    width: 44%;
+    border-radius: 1em;
+}

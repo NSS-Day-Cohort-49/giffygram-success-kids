@@ -6,14 +6,20 @@ import { DirectMessage } from "./friends/DirectMessage.js";
 import { deletePendingMessage, getUserPendingMessages } from "./data/provider.js";
 import { renderApp } from "./main.js";
 import { MessagesHistory } from "./friends/MessagesHistory.js";
+import { SentMessagesPage } from "./friends/sentMessagesPage.js";
+import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
+
 
 
 //Sets initial state for messageForm and directMessage as false:
 let navState = {
     messageFormPage: false,
     directMessagePage: false,
-    messageHistoryPage: false
+    messageHistoryPage: false,
+    sentMessagesPage: false,
+    receivedMessagesPage: false
 };
+
 
 //Custom event listeners coming from Navbar and MessageForm modules being dispatched/broadcasted as a change in state which changes navState and
 //does conditional rendering:
@@ -27,7 +33,7 @@ applicationElement.addEventListener("messageFormStateChanged", (customEvent) => 
         navState.messageHistoryPage = false;
         applicationElement.innerHTML = `
         <div class="nav_div">${NavBar()}</div>
-        <div >${MessageForm()}</div>`
+        <div class="msg_form_div">${MessageForm()}</div>`
     } else {
         navState.directMessagePage = false;
         navState.messageHistoryPage = false;
@@ -80,8 +86,49 @@ applicationElement.addEventListener("messageHistoryClicked", (customEvent) => {
         navState.messageFormPage = false;
         applicationElement.innerHTML = `
         <div class="nav_div">${NavBar()}</div>
-        <div >${MessagesHistory()}</div>`
+        <div id="hello">${MessagesHistory()}</div>`
     } else {
+        navState.directMessagePage = false;
+        navState.messageFormPage = false;
+        applicationElement.innerHTML = GiffyGram();
+    }
+});
+
+applicationElement.addEventListener("sentMessagesClicked", () => {
+    navState.sentMessagesPage = true;
+    navState.receivedMessagesPage = false;
+    if (navState.sentMessagesPage === true && navState.receivedMessagesPage === false) {
+        navState.messageHistoryPage = false;
+        navState.receivedMessagesPage = false;
+        navState.directMessagePage = false;
+        navState.messageFormPage = false;
+        applicationElement.innerHTML = `
+        <div class="nav_div">${NavBar()}</div>
+        <div id="hello">${SentMessagesPage()}</div>`
+    } else {
+        navState.receivedMessagesPage = false;
+        navState.sentMessagesPage = false;
+        navState.directMessagePage = false;
+        navState.messageFormPage = false;
+        applicationElement.innerHTML = GiffyGram();
+    }
+});
+
+
+applicationElement.addEventListener("receivedMessagesClicked", () => {
+    navState.receivedMessagesPage = true;
+    navState.sentMessagesPage = false;
+    if (navState.receivedMessagesPage === true && navState.sentMessagesPage === false) {
+        navState.messageHistoryPage = false;
+        navState.sentMessagesPage = false;
+        navState.directMessagePage = false;
+        navState.messageFormPage = false;
+        applicationElement.innerHTML = `
+        <div class="nav_div">${NavBar()}</div>
+        <div id="hello">${ReceivedMessagesPage()}</div>`
+    } else {
+        navState.receivedMessagesPage = false;
+        navState.sentMessagesPage = false;
         navState.directMessagePage = false;
         navState.messageFormPage = false;
         applicationElement.innerHTML = GiffyGram();
@@ -95,11 +142,12 @@ export const GiffyGram = () => {
     <div class="nav_div">
         ${NavBar()}
     </div>
+    <section>
         ${PostEntry()}
-    
+    </section>
     <section class="posts">
         <h2>Posts</h2>
         ${Posts()}
     </section>
     `
-}
+};

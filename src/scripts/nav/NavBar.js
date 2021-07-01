@@ -39,14 +39,14 @@ export const NavBar = () => {
             <div class="navigation__item navigation__icon">
                 <img class="img_logo" id="logo" src="./images/giffygramLogo.PNG" alt="Giffygram Logo" />
             </div>
-            <div>
+            <div class="imgGif">
                 <img class="img_gif" id="logo" src="./images/gifjif.gif" alt="giffy" />
             </div>
             <div class="navigation__item navigation__message">
                 <img id="directMessageIcon" src="https://img.icons8.com/dusk/48/000000/ball-point-pen.png" alt="DM" />
                 <div id="messageCounter" class="notification__count">${countUserPendingMessages()}</div>
             </div>
-            <div>
+            <div class="msgHistory">
                 <button id="msg_history">Message History</button>
             </div>
             <div class="logout_button">
