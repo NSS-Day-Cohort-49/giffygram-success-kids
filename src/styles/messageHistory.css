@@ -20,3 +20,57 @@
     margin-bottom: 2em;
     margin-left: 3em;
 }
+
+.msg_btns {
+    display: flex;
+    margin-left: 36em;
+    margin-bottom: 7em;
+    margin-top: 5em;
+    /* padding: 2em; */
+}
+
+#sentMsgBtn {
+    padding: 10px;
+    margin-right: 50px;
+    color: black;
+    background-color: #5bb1c7;;
+    border-radius: 50px;
+    font-size: 25px;
+    /* width:  30%; */
+}
+
+#sentMsgBtn:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+#receivedMsgBtn {
+    padding: 10px;
+    margin-right: 50px;
+    color: black;
+    background-color: #5bb1c7;;
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+#receivedMsgBtn:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+#allMsgBtn {
+    padding: 10px;
+    margin-right: 15px;
+    color: black;
+    background-color: #5bb1c7;;
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+#allMsgBtn:hover {
+    border: 2px solid rgb(48, 126, 216);
+    color: white;
+    background-color: rgb(43, 41, 41);
+}

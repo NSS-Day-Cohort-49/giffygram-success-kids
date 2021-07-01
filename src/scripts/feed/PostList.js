@@ -30,16 +30,7 @@ applicationElement.addEventListener("click", click => {
     }
 });
 
-// In original post call below: you are sending the id to the database and not the the object? thats why its breaking.
-// ex: favorites: [2] ????? should be: favorites: { id:1, userId:1, postId:2 }
-// applicationElement.addEventListener("click", click => {
-//     if (click.target.id.startsWith("favorite--")) {
-//         const [,postId] = click.target.id.split("--")
-//         favoritePost(parseInt(postId))
-//     }
-// });
 
-// Refactored favoritePost call below to send the object when doing post:
 applicationElement.addEventListener("click", click => {
     if (click.target.id.startsWith("favorite--")) {
         const [,postId] = click.target.id.split("--")

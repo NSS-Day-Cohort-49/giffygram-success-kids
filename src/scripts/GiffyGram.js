@@ -6,7 +6,7 @@ import { deletePendingMessage, getUserPendingMessages } from "./data/provider.js
 import { renderApp } from "./main.js";
 import { MessagesHistory } from "./friends/MessagesHistory.js";
 import { SentMessagesPage } from "./friends/sentMessagesPage.js";
-import { ReceivedMessagesPage } from "./friends/RecievedMessagesPage.js";
+import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
 
 
 //Sets initial state for messageForm and directMessage as false:

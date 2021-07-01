@@ -13,23 +13,22 @@ const countReceivedMessages = () => {
 
 export const ReceivedMessagesPage = () => {
     return `<div> 
-        <div>
-            <button id="sentMsgBtn">Sent</button>
-            <button id="receivedMsgBtn">Received</button>
-            <button id="allMsgBtn">All</button>
+        <div class="msg_btns">
+            <div><button id="sentMsgBtn">Sent</button></div>
+            <div><button id="receivedMsgBtn">Received</button></div>
+            <div><button id="allMsgBtn">All</button></div>
         </div>
-        <div id="messageHistoryDiv">
-        <p>Received Messages: ${countReceivedMessages()}</p>
+        <div id="receivedMsgDiv">
+        <div class="receivedMsgCounter"><h1 class="received_msg_counter">Received Messages:</h1><div class="msg_count">${countReceivedMessages()}</div></div>
         ${getUserPendingMessages().map((userSentMessage) => {
-            return `
+            return `<div class="received_msg_div">
                 <p>Topic: ${userSentMessage.topic}</p>
                 <p>Message: ${userSentMessage.messageBody}</p>
                 <p>Date Sent: ${userSentMessage.dateSent}</p>
                 <p>Sender: ${getUsers().find((user) => user.id === userSentMessage.userId).name}</p>
+            </div>
             `  
         }).join("")}
     </div>
     `
 };
-
-//Needs styling
