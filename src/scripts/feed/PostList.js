@@ -28,11 +28,11 @@ applicationElement.addEventListener("click", click => {
         const [,postId] = click.target.id.split("--")
         deletePost(parseInt(postId))
     }
-})
+});
 
 applicationElement.addEventListener("click", click => {
     if (click.target.id.startsWith("favorite--")) {
         const [,postId] = click.target.id.split("--")
         favoritePost(parseInt(postId))
     }
-})
+});

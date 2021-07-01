@@ -26,5 +26,4 @@ export const MessagesHistory = () => {
     </div>`
 };
 
-//sort method to sort messages by date
-//add alert on login page for wrong credentials when authenticating
+//add sort method to sort messages by date

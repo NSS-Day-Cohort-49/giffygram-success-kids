@@ -13,7 +13,8 @@ document.addEventListener("click", clickEvent => {
         for (const user of userState) {
             if (user.email === email && user.password === password) {
                 foundUser = user
-            } else if (user.email !== email && user.password !== password) {
+                break;
+            } else {
                 alert("Authentication Failed, Please Enter Correct Credentials To Log In.");
                 break;
             }

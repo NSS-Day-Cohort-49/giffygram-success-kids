@@ -117,7 +117,7 @@ export const favoritePost = (starredData) => {
         body: JSON.stringify(starredData)
     }
 
-    return fetch(`${apiURL}/favorite`, fetchOptions)
+    return fetch(`${apiURL}/favorites`, fetchOptions)
         .then(response => response.json())
         .then(() => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
