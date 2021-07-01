@@ -10,7 +10,6 @@ export const renderApp = () => {
 
     fetchUsers()
         .then(fetchPosts)
-        .then(fetchPosts)
         .then(() => {
             if (user) {
                 applicationElement.innerHTML = GiffyGram()
@@ -19,16 +18,6 @@ export const renderApp = () => {
             }
         })
     }
-    
-    // fetchPosts()
-    //     .then()
-    //     .then(() => {
-    //         if (userId) {
-    //             applicationElement.innerHTML = PostEntry()
-    //         } else {
-    //             applicationElement.innerHTML = LoginForm()
-    //         }
-        // })
 
 renderApp();
 
