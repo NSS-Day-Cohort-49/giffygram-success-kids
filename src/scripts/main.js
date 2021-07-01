@@ -25,21 +25,9 @@ export const renderApp = () => {
         })
     }
     
-    // fetchPosts()
-    //     .then()
-    //     .then(() => {
-    //         if (userId) {
-    //             applicationElement.innerHTML = PostEntry()
-    //         } else {
-    //             applicationElement.innerHTML = LoginForm()
-    //         }
-        // })
-        });
-};
 
 renderApp();
 
 applicationElement.addEventListener("stateChanged", (customEvent) => {
     renderApp();
-});
 });
