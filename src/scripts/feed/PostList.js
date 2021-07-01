@@ -1,17 +1,16 @@
-import { getPosts, deletePost, favoritePost } from "../data/provider.js"
+import { getPosts, getUsers, deletePost, favoritePost } from "../data/provider.js"
 
 export const Posts = () => {
     const posts = getPosts();
 
     let postHTML = `${posts.map(post => {
-        return `<section>
+        return `<section class= "post">
             <h1 class="post_title">${post.title}</h1>
             <img class="post_img" src="${post.url}"/>
             <section class="post_description">${post.description}</section>
-            <div class="post_buttons">
+            <section class="post_description"> Posted by ${post.user} on ${post.date}</section>
             <button class="post_favorite" id="favorite--${post.id}">Favorite</button>
             <button class="post_remove" id="remove--${post.id}">Delete</button>
-            </div>
         </section>`
     }).join("")}`
 
