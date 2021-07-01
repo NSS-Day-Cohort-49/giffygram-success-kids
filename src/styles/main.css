@@ -11,6 +11,7 @@
 @import 'sentMessages.css';
 @import 'receivedMessages.css';
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
 /*Typography
 --------------------------------------------------------------*/
 
@@ -25,7 +26,12 @@ body, button, input, select, textarea {
 
 h1, h2, h3, h4, h5, h6 {
     /* font-family: "Patua One", serif; */
+    font-family: "Akaya Kanadaka";
     letter-spacing: 2px;
+}
+
+.post_description {
+    font-family: "Akaya Kanadaka";
 }
 
 .actionIcon {
@@ -63,3 +69,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 0px;
 }
 
+.body {
+    background-image: url("https://i.pinimg.com/originals/8b/7f/bc/8b7fbc2e623720393ad7ffa7e4896eac.gif");
+    background-attachment:fixed;
+    background-size: cover;
+}

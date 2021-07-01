@@ -1,7 +1,5 @@
 import { getUsers } from "../data/provider.js"
 
-
-
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "loginButton") {
         let foundUser = null
@@ -25,7 +23,6 @@ document.addEventListener("click", clickEvent => {
     }
 });
 
-
 export const LoginForm = () => {
     return `
     <div class="login_wrapper loginForm">
@@ -46,18 +43,3 @@ export const LoginForm = () => {
     </div>
     `
 }
-
-
-    {/* <div class="loginForm">
-            <form>
-                <fieldset>
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" autofocus placeholder="Email address" />
-                </fieldset>
-                <fieldset>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Password" />
-                </fieldset>
-            </form>
-            <button id="loginButton">Login</button>
-        </div> */}
