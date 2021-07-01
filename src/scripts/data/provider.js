@@ -162,7 +162,6 @@ export const deletePendingMessage = (messageId) => {
     .then(response => response.json());
 }
 export const deletePost = (id) => {
-
     return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
             () => {
