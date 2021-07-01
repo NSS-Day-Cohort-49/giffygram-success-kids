@@ -48,7 +48,7 @@ export const PostEntry = () => {
         </div>
         
         <textarea name="postDescription"
-            class="newPost__input"
+            class="newPost__desc"
             placeholder="Add a caption?"></textarea>
 
         <button id="newPost__submit">Save</button>
