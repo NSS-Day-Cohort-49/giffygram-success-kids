@@ -13,16 +13,14 @@ document.addEventListener("click", clickEvent => {
         for (const user of userState) {
             if (user.email === email && user.password === password) {
                 foundUser = user
-                break;
-            } else {
-                alert("Authentication Failed, Please Enter Correct Credentials To Log In.");
-                break;
             }
         }
 
         if (foundUser !== null) {
             localStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+        } else {
+            alert("Authentication Failed, Please Enter Correct Credentials To Log In.");
         }
     }
 });

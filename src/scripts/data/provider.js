@@ -91,12 +91,38 @@ export const getMessages = () => {
 export const getUserPendingMessages = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.pendingMessages.filter(pendingMessage => {
-        if (userId === pendingMessage.userId) {
+        // filters and matches the userId with the recipientId because to display the messages that were sent to the user.
+        // not the messages the user sent to another user.
+        if (userId === pendingMessage.recipientId) {
+            console.log('received', pendingMessage);
             return pendingMessage;
         }
     });
 };
 
+//Gets sent messages:
+export const getUserSentMessages = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.messages.filter(pendingMessage => {
+        if (userId === pendingMessage.userId) {
+            console.log('sent', pendingMessage);
+            return pendingMessage;
+        }
+    });
+};
+
+
+// Gets both received and sent messages:
+export const getAllUserMessages = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.messages.filter(pendingMessage => {
+        if (userId === pendingMessage.userId || userId === pendingMessage.recipientId) {
+            return pendingMessage;
+        }
+    });
+};
+
+// Gets received messages:
 export const getUserMessagesHistory = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.messages.filter(messageHistory => {
@@ -107,7 +133,6 @@ export const getUserMessagesHistory = () => {
 };
 
 //POST HTTP FETCH REQUESTS:
-
 export const favoritePost = (starredData) => {
     const fetchOptions = {
         method: "POST",
@@ -153,6 +178,8 @@ export const savePendingMessage = (messageContent) => {
     return fetch(`${apiURL}/pendingMessages`, fetchOptions)
         .then(response => response.json());
 };
+
+// DELETE HTTP FETCH REQUESTS:
 
 export const deletePendingMessage = (messageId) => {
     const fetchOptions = {
