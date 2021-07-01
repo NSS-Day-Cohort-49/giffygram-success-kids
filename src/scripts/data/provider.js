@@ -125,8 +125,6 @@ export const favoritePost = (starredData) => {
 };
 export const newPost = (userPostRequest) => {
     const fetchPostOptions = {
-export const sendMessage = (messageContent) => {
-    const fetchOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -137,9 +135,19 @@ export const sendMessage = (messageContent) => {
     return fetch(`${apiURL}/posts`, fetchPostOptions)
         .then(response => response.json())
         .then(() => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+};
+
+export const sendMessage = (messageContent) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(messageContent)
     }
-
+        
     return fetch(`${apiURL}/messages`, fetchOptions)
         .then(response => response.json())
         .then(() => {

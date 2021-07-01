@@ -1,8 +1,6 @@
 import { Posts } from "./feed/PostList.js"
 import { NavBar } from "./nav/NavBar.js"
 import { PostEntry } from "./feed/PostEntry.js"
-import { Posts } from "./feed/PostList.js";
-import { NavBar } from "./nav/NavBar.js";
 import { MessageForm } from "./message/MessageForm.js";
 import { DirectMessage } from "./friends/DirectMessage.js";
 import { deletePendingMessage, getUserPendingMessages } from "./data/provider.js";
@@ -94,10 +92,10 @@ applicationElement.addEventListener("messageHistoryClicked", (customEvent) => {
 export const GiffyGram = () => {
     // Show main main UI
     return `
-    <section class="nav_div">
+    <div class="nav_div">
         ${NavBar()}
-    </section>
-    ${PostEntry()}
+    </div>
+        ${PostEntry()}
     
     <section class="posts">
         <h2>Posts</h2>
@@ -105,11 +103,3 @@ export const GiffyGram = () => {
     </section>
     `
 }
-        return `
-        <div class="nav_div">${NavBar()}</div>            
-        <section class="posts">
-            <h2>Posts</h2>
-            ${Posts()}
-        </section>
-        `
-};
