@@ -17,6 +17,8 @@ document.addEventListener("click", clickEvent => {
         if (foundUser !== null) {
             localStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+        } else {
+            alert("Authentication Failed, Please Enter Correct Credentials To Log In.");
         }
     }
 });
@@ -25,7 +27,7 @@ export const LoginForm = () => {
     return `
     <div class="login_wrapper loginForm">
         <form action="" class="form">
-            <img class="avatar" src="https://i.imgur.com/dGo8DOk.jpg"/>
+            <img class="avatar" src="../images/avatar.png"/>
             <h1 class="title">Giffygram</h1>
             <div class="input_group">
                 <input class="log_input" type="text" name="email" autofocus id="loginUser" required>

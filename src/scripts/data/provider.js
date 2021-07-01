@@ -91,12 +91,38 @@ export const getMessages = () => {
 export const getUserPendingMessages = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.pendingMessages.filter(pendingMessage => {
-        if (userId === pendingMessage.userId) {
+        // filters and matches the userId with the recipientId because to display the messages that were sent to the user.
+        // not the messages the user sent to another user.
+        if (userId === pendingMessage.recipientId) {
+            console.log('received', pendingMessage);
             return pendingMessage;
         }
     });
 };
 
+//Gets sent messages:
+export const getUserSentMessages = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.messages.filter(pendingMessage => {
+        if (userId === pendingMessage.userId) {
+            console.log('sent', pendingMessage);
+            return pendingMessage;
+        }
+    });
+};
+
+
+// Gets both received and sent messages:
+export const getAllUserMessages = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.messages.filter(pendingMessage => {
+        if (userId === pendingMessage.userId || userId === pendingMessage.recipientId) {
+            return pendingMessage;
+        }
+    });
+};
+
+// Gets received messages:
 export const getUserMessagesHistory = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.messages.filter(messageHistory => {
@@ -107,7 +133,6 @@ export const getUserMessagesHistory = () => {
 };
 
 //POST HTTP FETCH REQUESTS:
-
 export const favoritePost = (starredData) => {
     const fetchOptions = {
         method: "POST",
@@ -117,7 +142,7 @@ export const favoritePost = (starredData) => {
         body: JSON.stringify(starredData)
     }
 
-    return fetch(`${apiURL}/favorite`, fetchOptions)
+    return fetch(`${apiURL}/favorites`, fetchOptions)
         .then(response => response.json())
         .then(() => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
@@ -135,6 +160,7 @@ export const newPost = (userPostRequest) => {
     return fetch(`${apiURL}/posts`, fetchPostOptions)
         .then(response => response.json())
         .then(() => {
+            alert("Your Post Has Been Sent! :D");
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
@@ -169,6 +195,8 @@ export const savePendingMessage = (messageContent) => {
         .then(response => response.json());
 };
 
+// DELETE HTTP FETCH REQUESTS:
+
 export const deletePendingMessage = (messageId) => {
     const fetchOptions = {
         method: "DELETE"
@@ -176,8 +204,8 @@ export const deletePendingMessage = (messageId) => {
     return fetch(`${apiURL}/pendingMessages/${messageId}`, fetchOptions)
     .then(response => response.json());
 }
-export const deletePost = (id) => {
 
+export const deletePost = (id) => {
     return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
             () => {
