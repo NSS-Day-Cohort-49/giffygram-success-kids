@@ -4,10 +4,11 @@ export const Posts = () => {
     const posts = getPosts();
 
     let postHTML = `${posts.map(post => {
-        return `<section>
+        return `<section class="postlist">
             <h1 class="post_title">${post.title}</h1>
             <img class="post_img" src="${post.url}"/>
             <section class="post_description">${post.description}</section>
+            <section class="post_user">Posted by ${post.user} on ${post.dateSent}</section>
             <div class="post_buttons">
             <button id="post_edit">Edit</button>
             <img class="post_favorite" src="https://img.icons8.com/material-outlined/48/000000/christmas-star.png" id="favorite--${post.id}" />
