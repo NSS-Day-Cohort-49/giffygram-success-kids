@@ -28,15 +28,6 @@ applicationElement.addEventListener("click", clickEvent => {
     }
 })
 
-applicationElement.addEventListener("click", clickEvent => {
-    clickEvent.preventDefault();
-    if (clickEvent.target.id === "showPost__form") {
-        clickEvent.target.id = "display";
-    } else {
-        clickEvent.target.id = "none";
-    }
-})
-
 export const PostEntry = () => {
     let html = `
     <div class="newPost">
