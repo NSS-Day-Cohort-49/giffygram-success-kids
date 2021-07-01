@@ -1,0 +1,38 @@
+import { getUsers, getPosts } from "../data/provider.js";
+
+
+
+export const Profile = (userProfileId) => {
+
+    const users = getUsers();
+    const posts = getPosts();
+
+    // let messagesSorted = userMessageHistory.sort((a,b) => {
+        //     return b.dateSent - a.dateSent
+        // });
+    let sortedPosts = posts.sort((a,b) => {
+        return b.dateSent - a.dateSent
+    });
+
+    let userProfileHTML = `${users.map(user => {
+        if (userProfileId === user.id) {
+            const filteredPosts =sortedPosts.filter(userPost => {
+                return userPost.userId === user.id
+            });
+            filteredPosts.map(post => {
+                userProfileHTML += `
+                <div class="user_profile">
+                    <h1>${post.title}</h1>
+                    <img class="posted_gif" src="${post.url}" alt="Posted Gif" /> 
+                    <div>${post.description}</div>
+                    <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
+                </div>
+                `
+            })
+        }
+    }).join("")
+    }
+    `
+    return userProfileHTML;
+};
+

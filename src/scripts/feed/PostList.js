@@ -1,4 +1,5 @@
 import { getPosts, deletePost, favoritePost } from "../data/provider.js"
+// import { Profile } from "./Profile.js";
 
 export const Posts = () => {
     const posts = getPosts();
