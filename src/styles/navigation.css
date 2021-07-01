@@ -29,7 +29,6 @@
     padding-top: 0.1rem;
 }
 
-
 .navigation__message {
     margin-left: auto;
     margin-right: 4em;
@@ -38,15 +37,15 @@
     position: relative;
 }
 
-.navigation__message > img {
+.navigation__message>img {
     height: 2rem;
 }
 
-.notification__count{
-    background-color:#5bb1c7;
+.notification__count {
+    background-color: #5bb1c7;
     font-size: 18px;
     position: absolute;
-    padding:2px;
+    padding: 2px;
     /* top: 5px; */
     top: 21px;
     /* left: 3rem; */
@@ -86,7 +85,7 @@
 
 .navigation__logout {
     display: block;
-    margin:auto;
+    margin: auto;
     border: none;
     outline: none;
     background: #5bb1c7;
