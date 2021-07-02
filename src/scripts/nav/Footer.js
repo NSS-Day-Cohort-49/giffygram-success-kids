@@ -6,20 +6,30 @@ applicationElement.addEventListener("change", changevent => {
     if (changevent.target.id === "postsbyuser_posts") {
         applicationElement.dispatchEvent(new CustomEvent("footerUsersClickStateChanged",{detail:{userId: changevent.target.value}}));
     } else if (changevent.target.id === "postsbydate_posts") {
-        applicationElement.dispatchEvent(new CustomEvent("footerStateChanged"));
+        applicationElement.dispatchEvent(new CustomEvent("footerStateChanged",{detail:{postId: changevent.target.value}}));
     }
 });
 
 export const Footer = () => {
-    const users = getUsers()
     const posts = getPosts()
+    const users = getUsers()
 
 return`
   <div class= "footer">
     <div>
-        <label class="postsbyuser_label" for="postsbyuser_posts">Post by User </label>
+        <label class="postsbydate_label" for="postsbydate_posts"> Post since </label>
+  
+        <select id="postsbydate_posts" class="selectUser" name="postsbydate_posts">
+            <option value="">Choose a Year...</option>
+            ${posts.map(post => {
+                return `<option class="post" value="${post.year}">${post.year}</option>`}).join("")
+            }
+        </select>
     </div>
+
     <div>
+        <label class="postsbyuser_label" for="postsbyuser_posts">Post by User </label>
+
         <select id="postsbyuser_posts" class="selectUser" name="postsbyuser_posts">
             <option value="">Choose a User...</option>
             ${users.map(user => {
@@ -28,21 +38,11 @@ return`
         </select>
     </div>
 
-    <div>
-        <label class="postsbydate_label" for="postsbydate_posts"> Post since </label>
-    </div>
-    <div>
-        <select id="postsbydate_posts" class="selectUser" name="postsbydate_posts">
-            <option value="">Choose a Year...</option>
-            ${posts.map(post => {
-                return `<option class="post" value="${post.id}">${post.year}</option>`}).join("")
-            }
-        </select>
-    </div>
+    
+    <div> 
+    Show Favorites Only
+    <input class="showOnlyFavorites_input" type="checkbox" />
+            </div>
   </div>
-  <div>
-  </div>
-    `
+`
 };
-
-{/* <input type="checkbox"> */}

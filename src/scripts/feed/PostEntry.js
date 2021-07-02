@@ -14,7 +14,8 @@ applicationElement.addEventListener("click", clickEvent => {
            url: postURL,
            description: postDescription,
            dateSent: new Date().toLocaleDateString(),
-           userId: parseInt(localStorage.getItem("gg_user")),
+           year: new Date().getFullYear(),
+           userId: parseInt(localStorage.getItem("gg_user"))
         }
 
         newPost(dataToSendToAPI)

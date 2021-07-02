@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content:space-evenly;
     border-bottom: 1px solid lightblue;
     padding: 0.5em 0 0.5em 1em;
     margin-bottom: 2em;
@@ -15,4 +15,12 @@
 
 .footer__item {
     margin: 0 1rem;
+}
+
+.profile_posts{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    text-align: center;
+    margin-left: 28em;
 }
