@@ -7,7 +7,7 @@
 }
 
 .sent_msg_div {
-    padding: 1em;
+    padding: 3em;
     margin: 0.5em 0em 2em 20em;
     width: 35vw;
     border: 3px solid #a6a7a8;
@@ -16,6 +16,7 @@
     border-top-right-radius: 170px;
     border-bottom-left-radius: 170px;
     box-shadow: 0.3rem 0.3rem 0.5rem rgb(61, 60, 60);
+    cursor: pointer;
 }
 
 .sent_msg_div:hover {
@@ -27,6 +28,7 @@
 .sentMsgCounter {
     display: flex;
     margin-left: 3em;
+    cursor: pointer;
 }
 
 .sent_msg_counter {
@@ -34,10 +36,24 @@
     margin: 0.5em 0em 3em 20em;
     font-size: 30px;
     text-align: center;
+    cursor: pointer;
 }
 
 .msg_count {
     font-size: 30px;
     margin-top: 1em;
     margin-left: 1em;
+    cursor: pointer;
+}
+
+.msg_count:hover {
+    color: #5bb1c7;
+}
+
+#sentMsgBtn {
+    cursor: pointer;
+}
+
+#allMsgBtn {
+    cursor: pointer;
 }

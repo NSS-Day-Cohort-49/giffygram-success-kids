@@ -13,8 +13,8 @@ applicationElement.addEventListener("click", clickEvent => {
            title: postTitle,
            url: postURL,
            description: postDescription,
-           timestamp: Date.now(),
-           userId: parseInt(localStorage.getItem("gg_user"))
+           dateSent: new Date().toLocaleDateString(),
+           userId: parseInt(localStorage.getItem("gg_user")),
         }
 
         newPost(dataToSendToAPI)
