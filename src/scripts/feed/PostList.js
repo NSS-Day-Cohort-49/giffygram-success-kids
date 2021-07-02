@@ -5,9 +5,11 @@ export const Posts = () => {
     const posts = getPosts();
     const users = getUsers();
 
+    // initial count value of i for the favorites array is zero;
     let i = 0;
-    let postHTML = `${posts.map(post => {
 
+    // matching id of post to userFavorite postId
+    let postHTML = `${posts.map(post => {
 
         let foundUserFavorite = getUserFavorites().filter((userFavorite) => {
             if (post.id === userFavorite.postId) {
@@ -16,13 +18,16 @@ export const Posts = () => {
         });
 
         let favoriteIcon;
+
+        // if the found user favorites array is empty and clicked, then render the patrick star favorite icon
         if (typeof foundUserFavorite[i] !== 'undefined') {
             if (foundUserFavorite[i].postId === post.id) {
                 favoriteIcon = `<img class="post_favorite" src="https://img.icons8.com/cute-clipart/64/000000/patrick-star.png" id="favorite--${post.id}" />`
             }
+        // if the array is not empty when clicked, then render the blank star icon
         } else {
             favoriteIcon = `<img class="post_favorite" src="https://img.icons8.com/material-outlined/48/000000/christmas-star.png" id="favorite--${post.id}" />`
-        }
+        };
 
         const foundUser = users.find(user => user.id === parseInt(post.userId));
         return `<section class="postlist">
@@ -59,7 +64,8 @@ applicationElement.addEventListener("click", (event) => {
     }
 });
 
-
+// event listener that posts to favorites array in db when blank star button clicked if array is empty and re-renders; else deletes the id of
+//favorited post from db if array is not empty: 
 applicationElement.addEventListener("click", click => {
     if (click.target.id.startsWith("favorite--")) {
         let [,postId] = click.target.id.split("--")

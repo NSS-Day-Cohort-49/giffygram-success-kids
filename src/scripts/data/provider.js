@@ -130,6 +130,7 @@ export const getUserMessagesHistory = () => {
     });
 };
 
+// Gets user favorited post:
 export const getUserFavorites = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.favorites.filter(userFavorite => {
@@ -220,6 +221,8 @@ export const deletePost = (id) => {
             }
         )
 };
+
+//Deletes user favorited post:
 
 export const deleteFavorite = (postId) => {
     const fetchOptions = {
