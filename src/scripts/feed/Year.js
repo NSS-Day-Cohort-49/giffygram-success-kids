@@ -17,13 +17,14 @@ export const Year = (userYear) => {
     });
 
     let userProfileHTML = filteredPosts.map(post => {  
+        const foundUser = users.find(user => user.id === parseInt(post.userId));
         return `
                
                 <div class="profile_posts">
                     <h1>${post.title}</h1>
                     <img class="post_img" src="${post.url}" alt="Posted Gif" /> 
                     <div>${post.description}</div>
-                    <div>Posted By: <div class="user_name" id="chosenUser--${post.year}"> ${post.year}</div> on ${post.dateSent}</div>
+                    <div>Posted By: <div class="user_name" id="chosenUser--${post.year}"> ${foundUser.name}</div> on ${post.dateSent}</div>
                 </div>
                 `
             }).join("")

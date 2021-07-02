@@ -8,6 +8,7 @@
     background-color: #81b9c7;
     font-size: 25px;
     box-shadow: 0.3rem 0.3rem 0.5rem rgb(61, 60, 60);
+    cursor: pointer;
 }
 
 .dm_div:hover {
