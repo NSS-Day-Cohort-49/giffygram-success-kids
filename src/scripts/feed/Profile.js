@@ -16,14 +16,15 @@ export const Profile = (userProfileId) => {
         return userPost.userId === userProfileId
     });
 
-    let userProfileHTML = filteredPosts.map(post => {  
+    let userProfileHTML = filteredPosts.map(post => { 
+        const foundUser = users.find(user => user.id === parseInt(post.userId));  
         return `
                
-                <div class="profile_posts">
+                <div class="profile_posts user_profile">
                     <h1>${post.title}</h1>
-                    <img class="post_img" src="${post.url}" alt="Posted Gif" /> 
+                    <img class="post_img posted_gif" src="${post.url}" alt="Posted Gif" /> 
                     <div>${post.description}</div>
-                    <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
+                    <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${foundUser.name}</div> on ${post.dateSent}</div>
                 </div>
                 `
             }).join("")
