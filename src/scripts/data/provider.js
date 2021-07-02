@@ -94,7 +94,6 @@ export const getUserPendingMessages = () => {
         // filters and matches the userId with the recipientId because to display the messages that were sent to the user.
         // not the messages the user sent to another user.
         if (userId === pendingMessage.recipientId) {
-            console.log('received', pendingMessage);
             return pendingMessage;
         }
     });
@@ -105,7 +104,6 @@ export const getUserSentMessages = () => {
     const userId = parseInt(localStorage.getItem("gg_user"));
     return applicationState.messages.filter(pendingMessage => {
         if (userId === pendingMessage.userId) {
-            console.log('sent', pendingMessage);
             return pendingMessage;
         }
     });
@@ -128,6 +126,16 @@ export const getUserMessagesHistory = () => {
     return applicationState.messages.filter(messageHistory => {
         if (userId === messageHistory.userId) {
             return messageHistory;
+        }
+    });
+};
+
+// Gets user favorited post:
+export const getUserFavorites = () => {
+    const userId = parseInt(localStorage.getItem("gg_user"));
+    return applicationState.favorites.filter(userFavorite => {
+        if (userId === userFavorite.userId) {
+            return userFavorite;
         }
     });
 };
@@ -212,4 +220,17 @@ export const deletePost = (id) => {
                 applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
+};
+
+//Deletes user favorited post:
+
+export const deleteFavorite = (postId) => {
+    const fetchOptions = {
+        method: "DELETE"
+    }
+    return fetch(`${apiURL}/favorites/${postId}`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        })
 };
