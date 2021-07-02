@@ -17,7 +17,7 @@ export const SentMessagesPage = () => {
         <div><button id="receivedMsgBtn">Received</button></div>
         <div><button id="allMsgBtn">All</button></div>
     </div>
-    <div id="sentMsgDiv">
+    <div class="sentMsgDiv">
     <div class="sentMsgCounter"><h1 class="sent_msg_counter">Sent Messages:</h1><div class="msg_count">${countSentMessages()}</div></div>
     ${getUserSentMessages().map((userSentMessage) => {
       return `<div class="sent_msg_div">

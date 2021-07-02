@@ -22,16 +22,12 @@ export const MessagesHistory = () => {
     let userMessageHistory = getAllUserMessages();
 
     // let messagesSorted = userMessageHistory.sort((a,b) => {
-    //     return parseInt(b.dateSent.split("-").join("")) - parseInt(a.dateSent.split("-").join(""));
-    // });
-
-    // let messagesSorted = userMessageHistory.sort((a,b) => {
     //     return b.dateSent - a.dateSent
     // });
 
 
                 return `<div> 
-                <div>
+                <div class="msg_btns">
                     <button id="sentMsgBtn">Sent</button>
                     <button id="receivedMsgBtn">Received</button>
                     <button id="allMsgBtn">All</button>

@@ -18,15 +18,14 @@ export const Profile = (userProfileId) => {
 
     let userProfileHTML = filteredPosts.map(post => {  
         return `
-               
-                <div class="user_profile">
-                    <h1>${post.title}</h1>
-                    <img class="posted_gif" src="${post.url}" alt="Posted Gif" /> 
-                    <div>${post.description}</div>
-                    <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
-                </div>
-                `
-            }).join("")
+            <div class="user_profile">
+                <h1>${post.title}</h1>
+                <img class="posted_gif" src="${post.url}" alt="Posted Gif" /> 
+                <div>${post.description}</div>
+                <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
+            </div>
+        `
+    }).join("")
     
     return userProfileHTML;
 };

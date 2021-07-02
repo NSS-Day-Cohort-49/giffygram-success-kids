@@ -7,7 +7,7 @@
 }
 
 .sent_msg_div {
-    padding: 1em;
+    padding: 3em;
     margin: 0.5em 0em 2em 20em;
     width: 35vw;
     border: 3px solid #a6a7a8;
@@ -40,4 +40,8 @@
     font-size: 30px;
     margin-top: 1em;
     margin-left: 1em;
+}
+
+.msg_count:hover {
+    color: #5bb1c7;
 }

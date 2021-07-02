@@ -7,7 +7,7 @@
 }
 
 .received_msg_div {
-    padding: 1em;
+    padding: 3em;
     margin: 0.5em 0em 2em 20em;
     width: 35vw;
     border: 3px solid #a6a7a8;
@@ -22,5 +22,27 @@
     border: 3.5px solid black;
     background-color: #81bee7;
     color: rgb(107, 99, 99);
+}
+
+.receivedMsgCounter {
+    display: flex;
+    margin-left: 3em;
+}
+
+.received_msg_counter {
+    /* padding: 1em; */
+    margin: 0.5em 0em 3em 20em;
+    font-size: 30px;
+    text-align: center;
+}
+
+.msg_count {
+    font-size: 30px;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.msg_count:hover {
+    color: #5bb1c7;
 }
 
