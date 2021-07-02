@@ -1,4 +1,4 @@
-*{
+* {
     font-family: Courgette, cursive;
 }
 
@@ -38,8 +38,6 @@
     color: black;
     background-color: #5bb1c7;
     font-size: 20px;
-
-  
 }
 
 .close:hover {
@@ -76,7 +74,8 @@
 #sendButton {
     margin-right: 15px;
     color: black;
-    background-color: #5bb1c7;;
+    background-color: #5bb1c7;
+    ;
     border-radius: 50px;
     font-size: 20px;
     padding: 5px;
@@ -107,7 +106,7 @@
 .msg_label {
     font-size: 20px;
     padding: 10px 10px;
-    margin-left: 4.5em;  
+    margin-left: 4.5em;
 }
 
 .msg_top_input {

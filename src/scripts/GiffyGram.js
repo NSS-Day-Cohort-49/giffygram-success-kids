@@ -55,6 +55,7 @@ applicationElement.addEventListener("footerStateChanged", (customEvent) => {
         applicationElement.innerHTML = `
         <div class="footer_div">${Footer()}</div>
         <div class="nav_div">${NavBar()}</div>
+        <div class="posts_entry">${PostEntry()}</div>
         <div class="profile_div">${Year(parseInt(customEvent.detail.postId))}</div>`
     } else {
         applicationElement.innerHTML = GiffyGram();
