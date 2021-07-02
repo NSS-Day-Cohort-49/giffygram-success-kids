@@ -175,24 +175,6 @@ export const newPost = (userPostRequest) => {
         })
 };
 
-// edit post
-// export const editPost = (userEditRequest) => {
-//     const fetchPostOptions = {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json"
-//         }, 
-//         body: JSON.stringify(userEditRequest)
-//     }
-
-//     return fetch(`${apiURL}/posts`, fetchPostOptions)
-//     .then(response => response.json())
-//     .then(() => {
-//         alert("Your Post Has Been Updated! :D");
-//         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
-//     })
-// };
-
 export const sendMessage = (messageContent) => {
     const fetchOptions = {
         method: "POST",

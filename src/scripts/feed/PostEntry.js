@@ -1,4 +1,4 @@
-import { newPost, getUsers } from "../data/provider.js"
+import { newPost } from "../data/provider.js"
 
 const applicationElement = document.querySelector(".giffygram")
 

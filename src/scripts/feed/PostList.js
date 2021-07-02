@@ -87,30 +87,3 @@ applicationElement.addEventListener("click", click => {
         }
     }
 });
-
-// edit button
-// applicationElement.addEventListener("click", clickEvent => {
-//     if (clickEvent.target.id.startsWith("updatePost")) {
-//         const [,postId] = clickEvent.target.id.split("--")[1];
-//         const postTitle = document.querySelector("input[name='postTitle']").value
-//         const postURL = document.querySelector("input[name='postURL']").value
-//         const postDescription = document.querySelector("textarea[name='postDescription']").value
-
-//         const dataToSendToAPI = {
-//            title: postTitle,
-//            url: postURL,
-//            description: postDescription,
-//            timestamp: Date.now(),
-//            userId: parseInt(localStorage.getItem("gg_user")),
-//            id: parseInt(postId)
-//         }
-
-        // put something here
-
-       // editPost(dataToSendToAPI)
-        // .then(response => {
-            // put something here
-        // })
-
-//     }
-// })
