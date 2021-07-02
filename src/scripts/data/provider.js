@@ -148,6 +148,8 @@ export const favoritePost = (starredData) => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
+
+// new post
 export const newPost = (userPostRequest) => {
     const fetchPostOptions = {
         method: "POST",
@@ -163,6 +165,24 @@ export const newPost = (userPostRequest) => {
             alert("Your Post Has Been Sent! :D");
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
+};
+
+// edit post
+export const editPost = (userEditRequest) => {
+    const fetchPostOptions = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        }, 
+        body: JSON.stringify(userEditRequest)
+    }
+
+    return fetch(`${apiURL}/posts`, fetchPostOptions)
+    .then(response => response.json())
+    .then(() => {
+        alert("Your Post Has Been Updated! :D");
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+    })
 };
 
 export const sendMessage = (messageContent) => {

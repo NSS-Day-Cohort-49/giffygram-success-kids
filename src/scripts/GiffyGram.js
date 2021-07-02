@@ -1,6 +1,7 @@
 import { Posts } from "./feed/PostList.js"
 import { NavBar } from "./nav/NavBar.js"
 import { PostEntry } from "./feed/PostEntry.js"
+import { PostEdit } from "./feed/PostEdit.js";
 import { MessageForm } from "./message/MessageForm.js";
 import { DirectMessage } from "./friends/DirectMessage.js";
 import { deletePendingMessage, getUserPendingMessages } from "./data/provider.js";
@@ -163,6 +164,7 @@ export const GiffyGram = () => {
     </div>
     <section>
         ${PostEntry()}
+        ${PostEdit()}
     </section>
     <section class="posts">
         <h2>Posts</h2>
