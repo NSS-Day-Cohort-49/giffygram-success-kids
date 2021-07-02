@@ -76,12 +76,22 @@
 .posts {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction:column-reverse;
     text-align: center;
-    margin-left: 38em;
+    margin-left: 28em;
+    padding-bottom: 6em;
 }
 
 .post_img {
     border-radius: 1em;
     width: 800px;
+}
+
+.posts_entry {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 48em;
+    padding-bottom: 6em;
+
 }

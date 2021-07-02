@@ -10,6 +10,7 @@ import { SentMessagesPage } from "./friends/sentMessagesPage.js";
 import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
 import { Footer } from "./nav/Footer.js"
 import { Profile } from "./feed/Profile.js"
+import { Year } from "./feed/Year.js"
 
 
 
@@ -32,13 +33,29 @@ let footerState = {
 //does conditional rendering:
 const applicationElement = document.querySelector(".giffygram");
 applicationElement.addEventListener("footerUsersClickStateChanged", (customEvent) => {
-    console.log(footerState, customEvent.detail.userId)
+    // console.log(footerState, customEvent.detail.userId)
     footerState.postsbyuser_posts = !footerState.postsbyuser_posts;
     if (footerState.postsbyuser_posts) {
         footerState.postsbydate_posts = false;
         applicationElement.innerHTML = `
         <div class="footer_div">${Footer()}</div>
+        <div class="nav_div">${NavBar()}</div>
+        <div class="posts_entry">${PostEntry()}</div>
         <div class="profile_div">${Profile(parseInt(customEvent.detail.userId))}</div>`
+    } else {
+        applicationElement.innerHTML = GiffyGram();
+    }
+});
+
+applicationElement.addEventListener("footerStateChanged", (customEvent) => {
+    console.log(footerState, customEvent.detail.postId)
+    footerState.postsbydate_posts = !footerState.postsbydate_posts;
+    if (footerState.postsbydate_posts) {
+        footerState.postsbyuser_posts = false;
+        applicationElement.innerHTML = `
+        <div class="footer_div">${Footer()}</div>
+        <div class="nav_div">${NavBar()}</div>
+        <div class="profile_div">${Year(parseInt(customEvent.detail.postId))}</div>`
     } else {
         applicationElement.innerHTML = GiffyGram();
     }
@@ -161,7 +178,7 @@ export const GiffyGram = () => {
     <div class="nav_div">
         ${NavBar()}
     </div>
-    <section>
+    <section class="posts_entry">
         ${PostEntry()}
     </section>
     <section class="posts">

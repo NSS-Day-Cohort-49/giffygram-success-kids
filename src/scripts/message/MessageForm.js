@@ -58,7 +58,7 @@ export const MessageForm = (state) => {
             </div>
             <div class="msg_content">
                 <label class="msg_label contentLabel" for="messageBody">Message:</label>
-                <textarea name="msgContent" id="message_body" columns="30" rows="8" placeholder="Message Content"></textarea>
+                <textarea name="msgContent" class= "textarea_message" id="message_body" columns="30" rows="8" placeholder="Message Content"></textarea>
             </div>
             <div class="msgForm_button">
                 <button id="sendButton">Send</button>

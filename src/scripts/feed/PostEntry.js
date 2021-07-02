@@ -13,7 +13,8 @@ applicationElement.addEventListener("click", clickEvent => {
            title: postTitle,
            url: postURL,
            description: postDescription,
-           timestamp: Date.now(),
+           dateSent: new Date().toLocaleDateString(),
+           year: new Date().getFullYear(),
            userId: parseInt(localStorage.getItem("gg_user"))
         }
 

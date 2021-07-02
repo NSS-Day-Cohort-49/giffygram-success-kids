@@ -127,7 +127,7 @@
     font-size: 20px;
 }
 
-textarea {
+.textarea_message {
     border: solid 2px rgb(94, 92, 92);
     width: 44%;
     border-radius: 1em;

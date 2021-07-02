@@ -2,7 +2,7 @@ import { getUsers, getPosts } from "../data/provider.js";
 
 
 
-export const Profile = (userProfileId) => {
+export const Year = (userYear) => {
     const users = getUsers();
     const posts = getPosts();
 
@@ -13,7 +13,7 @@ export const Profile = (userProfileId) => {
         return b.dateSent - a.dateSent
     });
     const filteredPosts =sortedPosts.filter(userPost => {
-        return userPost.userId === userProfileId
+        return userPost.year === userYear
     });
 
     let userProfileHTML = filteredPosts.map(post => {  
@@ -23,7 +23,7 @@ export const Profile = (userProfileId) => {
                     <h1>${post.title}</h1>
                     <img class="post_img" src="${post.url}" alt="Posted Gif" /> 
                     <div>${post.description}</div>
-                    <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${post.userId}</div> on ${post.dateSent}</div>
+                    <div>Posted By: <div class="user_name" id="chosenUser--${post.year}"> ${post.year}</div> on ${post.dateSent}</div>
                 </div>
                 `
             }).join("")
