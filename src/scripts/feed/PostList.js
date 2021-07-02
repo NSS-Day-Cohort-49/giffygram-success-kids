@@ -34,7 +34,7 @@ export const Posts = () => {
             <h1 class="post_title">${post.title}</h1>
             <img class="post_img" src="${post.url}"/>
             <section class="post_description">${post.description}</section>
-            <option id="chosenUserPost" class="post_user" value="${foundUser.id}"></option><div>Posted by: <div class="postUser">${foundUser.name}</div> on ${post.dateSent}</div>
+            <option id="chosenUserPost" class="post_user" value="${foundUser.id}">Posted by: ${foundUser.name} on ${post.dateSent}</option>
             <div class="post_buttons">
             ${favoriteIcon}
             <img class="post_remove" src="https://img.icons8.com/dusk/48/000000/trash.png" id="remove--${post.id}" />
@@ -46,6 +46,7 @@ export const Posts = () => {
     return postHTML;
 };
 
+{/* <option id="chosenUserPost" class="post_user" value="${foundUser.id}"></option><div>Posted by: <div class="postUser">${foundUser.name}</div> on ${post.dateSent}</div> */}
 {/* <button class="post_favorite" id="favorite--${post.id}">Favorite</button> */}
 {/* <button class="post_remove" id="remove--${post.id}">Delete</button> */}
 
