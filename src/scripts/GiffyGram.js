@@ -38,8 +38,7 @@ applicationElement.addEventListener("footerUsersClickStateChanged", (customEvent
         footerState.postsbydate_posts = false;
         applicationElement.innerHTML = `
         <div class="footer_div">${Footer()}</div>
-        <div class="profile_div">${Profile(parseInt(customEvent.detail.userId))}</div>
-        <div class="nav_div">${NavBar()}</div>`
+        <div class="profile_div">${Profile(parseInt(customEvent.detail.userId))}</div>`
     } else {
         applicationElement.innerHTML = GiffyGram();
     }

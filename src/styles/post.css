@@ -108,8 +108,13 @@
     background-color: #5bb1c7;
 }
 
-.postUser {
+.post_user {
     cursor: pointer;
+}
+
+.post_user:hover {
+    text-decoration: underline;
+    color: #5bb1c7;
 }
 
 .postUser:hover {
