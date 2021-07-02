@@ -1,0 +1,10 @@
+.newPost {
+    margin-left: 200px;
+}
+
+.newPost__desc {
+    border: solid 2px rgb(94, 92, 92);
+    width: 170px;
+    height: 130px;
+    border-radius: 1em;
+}

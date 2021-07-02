@@ -156,6 +156,8 @@ export const favoritePost = (starredData) => {
             applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 };
+
+// new post
 export const newPost = (userPostRequest) => {
     const fetchPostOptions = {
         method: "POST",

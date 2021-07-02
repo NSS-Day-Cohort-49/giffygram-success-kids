@@ -2,6 +2,7 @@
 @import 'footer.css';
 @import 'feed.css';
 @import 'post.css';
+@import 'postEntry.css';
 @import 'updates.css';
 @import 'message.css';
 @import 'login.css';
@@ -12,10 +13,15 @@
 @import 'receivedMessages.css';
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+
 /*Typography
 --------------------------------------------------------------*/
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+.newPost__desc {
     color: #404040;
     /* font-family: "Comfortaa", Arial, sans-serif; */
     font-size: 1rem;
@@ -24,7 +30,12 @@ body, button, input, select, textarea {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     /* font-family: "Patua One", serif; */
     /* font-family: "Akaya Kanadaka"; */
     font-family: Courgette, cursive;
@@ -73,6 +84,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .body {
     background-image: url("../images/loginBgd.gif");
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-size: cover;
 }
