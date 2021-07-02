@@ -164,7 +164,6 @@ export const GiffyGram = () => {
     </div>
     <section>
         ${PostEntry()}
-        ${PostEdit()}
     </section>
     <section class="posts">
         <h2>Posts</h2>
