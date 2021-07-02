@@ -11,6 +11,7 @@ import { ReceivedMessagesPage } from "./friends/ReceivedMessagesPage.js";
 import { Footer } from "./nav/Footer.js"
 import { Profile } from "./feed/Profile.js"
 import { Year } from "./feed/Year.js"
+import { FavoritePostsPage } from "./feed/favoritePostsPage.js";
 
 
 
@@ -25,7 +26,8 @@ let navState = {
 
 let footerState = {
     postsbyuser_posts: false,
-    postsbydate_posts: false
+    postsbydate_posts: false,
+    postsByFavorites: false
 };
 
 
@@ -36,6 +38,7 @@ applicationElement.addEventListener("footerUsersClickStateChanged", (customEvent
     // console.log(footerState, customEvent.detail.userId)
     footerState.postsbyuser_posts = !footerState.postsbyuser_posts;
     if (footerState.postsbyuser_posts) {
+        footerState.postsByFavorites = false;
         footerState.postsbydate_posts = false;
         applicationElement.innerHTML = `
         <div class="footer_div">${Footer()}</div>
@@ -51,12 +54,25 @@ applicationElement.addEventListener("footerStateChanged", (customEvent) => {
     console.log(footerState, customEvent.detail.postId)
     footerState.postsbydate_posts = !footerState.postsbydate_posts;
     if (footerState.postsbydate_posts) {
+        footerState.postsByFavorites = false;
         footerState.postsbyuser_posts = false;
         applicationElement.innerHTML = `
         <div class="footer_div">${Footer()}</div>
         <div class="nav_div">${NavBar()}</div>
         <div class="posts_entry">${PostEntry()}</div>
         <div class="profile_div">${Year(parseInt(customEvent.detail.postId))}</div>`
+    } else {
+        applicationElement.innerHTML = GiffyGram();
+    }
+});
+
+
+applicationElement.addEventListener("showOnlyFavorites", (customEvent) => {
+    footerState.postsByFavorites = !footerState.postsByFavorites;
+    if (footerState.postsByFavorites) {
+        footerState.postsbydate_posts = false;
+        footerState.postsbyuser_posts = false;
+        applicationElement.innerHTML = FavoritePostsPage();
     } else {
         applicationElement.innerHTML = GiffyGram();
     }
