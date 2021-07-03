@@ -198,8 +198,8 @@ export const GiffyGram = () => {
     <section class="posts_entry">
         ${PostEntry()}
     </section>
+    <h1 class="post_header">Posts:</h1>
     <section class="posts">
-        <h2>Posts</h2>
         ${Posts()}
     </section>
     <div class="footer_div">

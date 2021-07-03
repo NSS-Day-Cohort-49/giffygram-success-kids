@@ -27,14 +27,14 @@ export const FavoritePostsPage = () => {
         
         const foundUser = users.find(user => user.id === postFound.userId);
         console.log('found user', foundUser);
-        return `<section class="postlist">
-        <h1 class="post_title">${foundUserFavorite.title}</h1>
-        <img class="post_img" src="${foundUserFavorite.url}"/>
-        <section class="post_description">${foundUserFavorite.description}</section>
-        <option id="chosenUserPost" class="post_user" value="${foundUser.id}">Posted by: ${foundUser.name} on ${foundUserFavorite.dateSent}</option>
-        <div class="post_buttons">
-        <img class="post_favorite" src="https://img.icons8.com/cute-clipart/64/000000/patrick-star.png" id="favorite--${foundUserFavorite.id}" />
-        <img class="post_remove" src="https://img.icons8.com/dusk/48/000000/trash.png" id="remove--${foundUserFavorite.id}" />
+        return `<section class="fave_list">
+        <h1 class="fave_title">${foundUserFavorite.title}</h1>
+        <img class="fave_img" src="${foundUserFavorite.url}"/>
+        <div class="fave_div"><section class="fave_description">${foundUserFavorite.description}</section></div>
+        <option id="chosenUserPost" class="fave_user" value="${foundUser.id}">Posted by: ${foundUser.name} on ${foundUserFavorite.dateSent}</option>
+        <div class="fave_buttons">
+        <img class="fave_favorite" src="https://img.icons8.com/cute-clipart/64/000000/patrick-star.png" id="favorite--${foundUserFavorite.id}" />
+        <img class="fave_remove" src="https://img.icons8.com/dusk/48/000000/trash.png" id="remove--${foundUserFavorite.id}" />
         </div>
     </section>`
 

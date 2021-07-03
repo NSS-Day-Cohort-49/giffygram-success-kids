@@ -20,9 +20,9 @@ export const Profile = (userProfileId) => {
         const foundUser = users.find(user => user.id === parseInt(post.userId));  
         return `
                
-                <div class="profile_posts user_profile">
+                <div class="profile_posts user_profile profile_div">
                     <h1>${post.title}</h1>
-                    <img class="post_img posted_gif" src="${post.url}" alt="Posted Gif" /> 
+                    <img class="post_img posted_gif post_gif" src="${post.url}" alt="Posted Gif" /> 
                     <div>${post.description}</div>
                     <div>Posted By: <div class="user_name" id="chosenUser--${post.userId}"> ${foundUser.name}</div> on ${post.dateSent}</div>
                 </div>
