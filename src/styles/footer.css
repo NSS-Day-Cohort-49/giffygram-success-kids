@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content:space-evenly;
-    border-bottom: 1px solid lightblue;
+    border-top: 1px solid #5bb1c7;
     padding: 0.5em 0 0.5em 1em;
     margin-bottom: 2em;
     position: fixed;

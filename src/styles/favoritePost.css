@@ -1,13 +1,13 @@
-.posts {
-    display: flex;
+.fave_list {
+    /* display: flex;
     flex-wrap: wrap;
-    flex-direction:column-reverse;
+    /* flex-direction:column-reverse; */
     text-align: center;
     margin-left: 23em;
     padding-bottom: 6em;
 }
 
-.post_img {
+.fave_img {
     border-radius: 3em;
     width: 800px;
     margin-bottom: 4em;
@@ -15,7 +15,7 @@
     box-shadow: 0.5rem 0.5rem 0.5rem rgb(61, 60, 60);
 }
 
-.post_img:hover {
+.fave_img:hover {
     border: 4px solid #5bb1c7;
     /* background-color: #5bb1c7; */
 }
@@ -28,18 +28,18 @@
     padding-bottom: 6em;
 }
 
-.post_remove {
+.fave_remove {
     border-radius: 25px;
     cursor: pointer;
     margin: 2em;
 }
 
-.post_remove:hover {
+.fave_remove:hover {
     border: 2px solid #151616;
     background-color: #5bb1c7;
 }
 
-.post_favorite {
+.fave_favorite {
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -47,24 +47,25 @@
     margin: 2em;
 }
 
-.post_favorite:hover {
+.fave_favorite:hover {
     border: 2px solid #151616;
     background-color: #5bb1c7;
 }
 
-.post_user {
+.fave_user {
     cursor: pointer;
-    margin: 0.5em;
+    margin: 0.5em 0.5em 0.5em 11em;
     font-size: 20px;
 }
 
-.post_user:hover {
+.fave_user:hover {
     text-decoration: underline;
     color: #5bb1c7;
 }
 
-.post_description {
+.fave_description {
     font-size: 20px;
+    padding-left: 11em;
 }
 
 .postUser:hover {
@@ -72,21 +73,36 @@
     color: #5bb1c7;
 }
 
-.post_title {
+.fave_title {
     font-size: 30px;
-    margin: 1.5em;
+    padding-left: 10em;
+    display: flex;
 }
 
-.post_title {
+.fave_title {
     text-decoration: underline;
     cursor: pointer;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    display: flex;
 }
 
-.post_title:hover {
+.fave_div {
+    display: inline-block;
+    padding-left: 11em;
+    text-align: center;
+}
+
+.fave_title:hover {
     color: #5bb1c7;
 }
 
-.post_header {
+.fave_header {
     font-size: 40px;
     margin: 1em 0 2em 18em;
+}
+
+.fave_buttons {
+    display: flex;
+    padding-left: 19em;
 }

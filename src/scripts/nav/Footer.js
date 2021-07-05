@@ -10,6 +10,12 @@ applicationElement.addEventListener("change", changevent => {
     }
 });
 
+applicationElement.addEventListener("click", (event) => {
+    if (event.target.id === "showFavoritesToggle") {
+        applicationElement.dispatchEvent(new CustomEvent("showOnlyFavorites"));
+    }
+})
+
 export const Footer = () => {
     const posts = getPosts()
     const users = getUsers()
@@ -41,7 +47,7 @@ return`
     
     <div> 
     Show Favorites Only
-    <input class="showOnlyFavorites_input" type="checkbox" />
+    <input id="showFavoritesToggle" class="showOnlyFavorites_input" type="checkbox" />
             </div>
   </div>
 `

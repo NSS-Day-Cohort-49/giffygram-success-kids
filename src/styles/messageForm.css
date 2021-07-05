@@ -38,6 +38,7 @@
     color: black;
     background-color: #5bb1c7;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .close:hover {
@@ -75,11 +76,11 @@
     margin-right: 15px;
     color: black;
     background-color: #5bb1c7;
-    ;
     border-radius: 50px;
     font-size: 20px;
     padding: 5px;
     width: 30%;
+    cursor: pointer;
 }
 
 #sendButton:hover {
@@ -95,6 +96,7 @@
     font-size: 20px;
     padding: 5px;
     width: 30%;
+    cursor: pointer;
 }
 
 #cancelButton:hover {
